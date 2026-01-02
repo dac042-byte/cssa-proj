@@ -1,0 +1,19 @@
+{
+  "name": "interspace-extension",
+  "version": "1.0.0",
+  "description": "CBT-style cognitive reappraisal Chrome extension with serverless backend",
+  "private": true,
+  "scripts": {
+    "dev": "echo 'Load extension in Chrome via chrome://extensions'",
+    "deploy": "vercel --prod"
+  },
+  "keywords": [
+    "chrome-extension",
+    "cbt",
+    "cognitive-behavioral-therapy",
+    "mental-health",
+    "mindfulness"
+  ],
+  "author": "",
+  "license": "MIT"
+}

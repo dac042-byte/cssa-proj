@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interspace</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header with Points -->
+    <div class="header">
+      <div class="title-section">
+        <h1>Interspace</h1>
+        <p class="subtitle">CBT-style thought clarity in under a minute.</p>
+      </div>
+      <div class="points-display">
+        <span class="points-label">Clarity Points:</span>
+        <span class="points-value" id="pointsValue">0</span>
+      </div>
+    </div>
+
+    <!-- Settings Toggle -->
+    <div class="settings-section">
+      <label class="toggle-container">
+        <input type="checkbox" id="saveThoughtToggle">
+        <span class="toggle-text">Save my last thought locally</span>
+      </label>
+    </div>
+
+    <!-- Main Input Section -->
+    <div class="input-section" id="inputSection">
+      <label for="thoughtInput">Your thought</label>
+      <textarea
+        id="thoughtInput"
+        placeholder="Type the thought that keeps looping..."
+        rows="4"
+      ></textarea>
+      <div class="button-group">
+        <button id="interrogateBtn" class="btn btn-primary">Interrogate</button>
+        <button id="clearBtn" class="btn btn-secondary">Clear</button>
+      </div>
+    </div>
+
+    <!-- Step A: Classification -->
+    <div class="step-section hidden" id="stepASection">
+      <h3>Step 1: What is this?</h3>
+      <p class="step-instruction">Choose one:</p>
+      <div class="choice-buttons">
+        <button class="choice-btn" data-value="fact">Fact</button>
+        <button class="choice-btn" data-value="thought">Thought</button>
+        <button class="choice-btn" data-value="prediction">Prediction</button>
+      </div>
+    </div>
+
+    <!-- Step B: Distortions -->
+    <div class="step-section hidden" id="stepBSection">
+      <h3>Step 2: Possible distortions</h3>
+      <p class="step-instruction">Select 1-2 that might apply:</p>
+      <div class="distortion-chips">
+        <button class="chip" data-distortion="catastrophizing">Catastrophizing</button>
+        <button class="chip" data-distortion="mind-reading">Mind reading</button>
+        <button class="chip" data-distortion="all-or-nothing">All-or-nothing</button>
+        <button class="chip" data-distortion="emotional-reasoning">Emotional reasoning</button>
+        <button class="chip" data-distortion="should-statements">Should statements</button>
+        <button class="chip" data-distortion="fortune-telling">Fortune telling</button>
+        <button class="chip" data-distortion="personalization">Personalization</button>
+        <button class="chip" data-distortion="overgeneralization">Overgeneralization</button>
+      </div>
+      <button id="stepBContinue" class="btn btn-primary" disabled>Continue</button>
+    </div>
+
+    <!-- Step C: Evidence Check -->
+    <div class="step-section hidden" id="stepCSection">
+      <h3>Step 3: Evidence check</h3>
+      <p class="step-instruction">Direct evidence this is objectively true?</p>
+      <div class="choice-buttons">
+        <button class="choice-btn" data-value="yes">Yes</button>
+        <button class="choice-btn" data-value="no">No or unclear</button>
+      </div>
+    </div>
+
+    <!-- Loading State -->
+    <div class="loading-section hidden" id="loadingSection">
+      <div class="spinner"></div>
+      <p>Analyzing your thought...</p>
+    </div>
+
+    <!-- Results Section -->
+    <div class="results-section hidden" id="resultsSection">
+      <h3>Your Clarity Report</h3>
+
+      <div class="result-block">
+        <h4>What this is</h4>
+        <p id="resultType"></p>
+      </div>
+
+      <div class="result-block">
+        <h4>Likely distortions</h4>
+        <ul id="resultDistortions"></ul>
+      </div>
+
+      <div class="result-block">
+        <h4>Assumptions vs facts</h4>
+        <p id="resultAssumptions"></p>
+      </div>
+
+      <div class="result-block">
+        <h4>Grounded reframe</h4>
+        <p id="resultReframe" class="reframe-text"></p>
+      </div>
+
+      <button id="startOverBtn" class="btn btn-primary">Start Over</button>
+    </div>
+
+    <!-- Status Line -->
+    <div class="status-line" id="statusLine"></div>
+
+    <!-- Points Toast -->
+    <div class="points-toast hidden" id="pointsToast"></div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

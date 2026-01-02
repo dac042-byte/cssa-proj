@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Interspace",
+  "version": "1.0.0",
+  "description": "CBT-style thought clarity in under a minute.",
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Interspace - Cognitive Clarity"
+  },
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
+}
